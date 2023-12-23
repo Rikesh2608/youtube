@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>youtube.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    body{
+        font-family: Roboto,Arial;
+        padding-left:80px ;
+        padding-top: 20px;
+        margin: 0;
+        background-color: rgba(0,0,0,0.95);
+        color: white;
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 56px;
+        background-color: rgb(16, 15, 15);
+        z-index: 1;
+    }
+    .left-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+    }
+    .ytlogo{
+        width: 100px;
+    }
+    .guidebutton{
+        width: 24px;
+        margin:10px 20px 10px 20px;
+        cursor: pointer;
+    }
+    .middle-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 750px;
+        margin-left: 32px;
+    }
+    .mic{
+        width: 46px;
+        border-radius: 16px;
+        object-fit: cover;
+        margin-left: 16px;
+    }
+    .search-box{
+        padding-left: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-left: 32px;
+        width: 450px;
+        background-color: black;
+        border-radius: 20px;
+        border-color: rgb(100,100,100);
+        border-style: solid;
+        border-width: 1px;
+    }
+    .sidebar{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 56px;
+        left: 0px;
+        bottom: 0;
+        padding-left: 8px;
+        padding-right: 8px;
+        background-color: black;
+    }
+    .toolkit{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 16px;
+        padding-bottom: 14px;
+        width: 56px;
+        cursor: pointer;
+    }
+    .toolkit:hover{
+        background-color: rgb(100,100,100);
+        border-radius: 5px;
+    }
+    .toolkit img{
+        width: 24px;
+    }
+    .toolkit div{
+        color: white;
+        margin-top: 8px;
+        font-size: 8px;
+    }
+    .right-section{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex: 1;
+    }
+    .upload{
+        margin-top: 8px;
+        width: 50px;
+        border-radius: 56px;
+        object-fit: cover;
+    }
+    .noti{
+        width: 80px;
+    }
+    .video-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 40px;
+        margin-right: 20px;
+        margin-top: 50px;
+    }
+    .video-preview{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    .top{
+        display: flex;
+        position: relative;
+        margin-bottom: 5px;
+    }
+    .thumbnail{
+        width:300px;
+        height: 180px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-bottom: 6px;
+    }
+    .time{
+        background-color: black;
+        color: white;
+        font-size: 12px;
+        padding: 2px 4px 2px 4px;
+        border-radius: 2px;
+        position: absolute;
+        text-align: center;
+        bottom: 10px;
+        right: 5px;
+    }
+    .bottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .left-bottom{
+        margin-right: 12px;
+    }
+    .channel-pic{
+        width: 36px;
+        height: 36px;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+    .right-bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .video-title{
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    .channel-name{
+        color: rgb(180, 176, 176);
+        font-size: 13px;
+        margin-bottom: 3px;
+    }
+    .video-stats{
+        color: rgb(180,176,176);
+        font-size: 13px;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="left-section">
+        <div>
+            <img src="guidebutton.png" class="guidebutton">
+        </div>
+        <div>
+            <img src="youtube.png" class="ytlogo">
+        </div>
+    </div>
+    <div class="middle-section">
+        <div class="search-container">
+            <input type="text" placeholder="Search" class="search-box">
+            </div>
+            <div class="mic-container">
+                <img src="mic.png" class="mic">
+            </div>
+    </div>
+    <div class="right-section">
+        <div>
+            <img src="upload.png" class="upload">
+        </div>
+        <div>
+            <img src="noti.png" class="noti">
+        </div>
+    </div>
+</div>
+
+<div class="sidebar">
+    <div class="toolkit">
+        <img src="home.png" class="home-img">
+        <div class="home">Home</div>
+    </div>
+    <div class="toolkit">
+        <img src="shorts.png" class="shorts-img">
+        <div class="shorts">Shorts</div>
+    </div>
+    <div class="toolkit">
+        <img src="subscription.png" class="subscription-img">
+        <div class="subscription">Subscriptions</div>
+    </div>
+    <div class="toolkit">
+        <img src="you.png" class="you-img">
+        <div class="you">You</div>
+    </div>
+</div>
+
+<div class="video-grid">
+
+    <div class="video-preview">
+        <div class="top">
+            <img src="hq720.webp" class="thumbnail">
+            <div class="time">1:16</div>
+        </div>
+        <div class="bottom">
+            <div class="left-bottom">
+                <img src="vijay.jpg" class="channel-pic">
+            </div>
+            <div class="right-bottom">
+                <div class="video-title">
+                    Mersal-Official Tamil Teaser |
+                    Vijay | A R Rahman | Atlee
+                </div>
+                <div class="channel-name">
+                    Sony Music India
+                </div>
+                <div class="video-stats">
+                    48M views · 6 years ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-preview">
+        <div class="top">
+            <img src="leo.webp" class="thumbnail">
+            <div class="time">2:42</div>
+        </div>
+        <div class="bottom">
+            <div class="left-bottom">
+                <img src="suntv.jpg" class="channel-pic">
+            </div>
+            <div class="right-bottom">
+                <div class="video-title">
+                    LEO - Official Trailer | Thalapathy Vijay | Lokesh Kanagaraj |
+                    Anirudh Ravichander
+                </div>
+                <div class="channel-name">
+                    Sun TV
+                </div>
+                <div class="video-stats">
+                    63M views · 2 months ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-preview">
+        <div class="top">
+            <img src="master-teaser.webp" class="thumbnail">
+            <div class="time">1:31</div>
+        </div>
+        <div class="bottom">
+            <div class="left-bottom">
+                <img src="suntv.jpg" class="channel-pic">
+            </div>
+            <div class="right-bottom">
+                <div class="video-title">
+                    Master - Official Trailer | Thalapathy Vijay |
+                    Anirudh Ravichander | Lokesh Kanagaraj 
+                </div>
+                <div class="channel-name">
+                    Sun TV
+                </div>
+                <div class="video-stats">
+                    77M views · 3 years ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-preview">
+        <div class="top">
+            <img src="bigil-trailer.webp" class="thumbnail">
+            <div class="time">2:42</div>
+        </div>
+        <div class="bottom">
+            <div class="left-bottom">
+                <img src="sony-music-south.jpg" class="channel-pic">
+            </div>
+            <div class="right-bottom">
+                <div class="video-title">
+                    Bigil - Official Trailer | Thalapathy Vijay,
+                     Nayanthara | A.R Rahman | Atlee | AGS
+                </div>
+                <div class="channel-name">
+                    Sony Music South
+                </div>
+                <div class="video-stats">
+                    59M views · 4 years ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-preview">
+        <div class="top">
+            <img src="sarkar-teaser.webp" class="thumbnail">
+            <div class="time">1:34</div>
+        </div>
+        <div class="bottom">
+            <div class="left-bottom">
+                <img src="suntv.jpg" class="channel-pic">
+            </div>
+            <div class="right-bottom">
+                <div class="video-title">
+                    Sarkar - Official Teaser [Tamil] | Thalapathy Vijay 
+                    | Sun Pictures | A.R Murugadoss | A.R. Rahman
+                </div>
+                <div class="channel-name">
+                    Sun TV
+                </div>
+                <div class="video-stats">
+                    46M views · 5 years ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-preview">
+        <div class="top">
+            <img src="bigil-al.webp" class="thumbnail">
+            <div class="time">25:04</div>
+        </div>
+        <div class="bottom">
+            <div class="left-bottom">
+                <img src="suntv.jpg" class="channel-pic">
+            </div>
+            <div class="right-bottom">
+                <div class="video-title">
+                    Thalapathy Vijay's Speech |
+                    Bigil Audio Launch | Sun TV
+                </div>
+                <div class="channel-name">
+                    Sun TV
+                </div>
+                <div class="video-stats">
+                    27M views · 4 years ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-preview">
+        <div class="top">
+            <img src="kaththi-Fl.webp" class="thumbnail">
+            <div class="time">0:42</div>
+        </div>
+        <div class="bottom">
+            <div class="left-bottom">
+                <img src="suntv.jpg" class="channel-pic">
+            </div>
+            <div class="right-bottom">
+                <div class="video-title">
+                    Kaththi - First Look Motion Poster | Vijay, Samantha 
+                    A.R. Murugadoss | Anirudh
+                </div>
+                <div class="channel-name">
+                    Lyca Productions
+                </div>
+                <div class="video-stats">
+                    5M views · 9 years ago
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
